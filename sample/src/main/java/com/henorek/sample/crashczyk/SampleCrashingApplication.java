@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.henorek.sample.krawczykoncrash;
+package com.henorek.sample.crashczyk;
 
 import android.app.Application;
 

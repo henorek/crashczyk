@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.henorek.sample.krawczykoncrash.activity;
+package com.henorek.sample.crashczyk.activity;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -24,7 +24,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.henorek.crashczyk.Crashczyk;
-import com.henorek.sample.krawczykoncrash.R;
+import com.henorek.sample.crashczyk.R;
 
 
 public class CustomErrorActivity extends Activity {
