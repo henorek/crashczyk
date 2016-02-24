@@ -2,7 +2,7 @@
 
 This library allows launching a custom activity when the app crashes, instead of showing the hated "Unfortunately, X has stopped" dialog.
 
-![](https://github.com/Ereza/CustomActivityOnCrash/blob/master/images/frontpage.png)
+![](https://raw.githubusercontent.com/henorek/crashczyk/master/images/frontpage.png)
 
 ## How to use
 
