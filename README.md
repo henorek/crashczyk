@@ -1,6 +1,6 @@
-# Custom Activity On Crash library
+# Crashczyk library
 
-This library allows launching a custom activity when the app crashes, instead of showing the hated "Unfortunately, X has stopped" dialog.
+This library launch a custom activity with Krzysztof Krawczyk (Polish singer) quotes when your app crashes. It's based on [Ereza project](https://github.com/Ereza/CustomActivityOnCrash) and it's directed to Polish users.
 
 ![](https://raw.githubusercontent.com/henorek/crashczyk/master/images/frontpage.png)
 
@@ -11,7 +11,7 @@ This library allows launching a custom activity when the app crashes, instead of
 Add the following dependency to your build.gradle:
 ```gradle
 dependencies {
-    compile 'cat.ereza:customactivityoncrash:1.4.0'
+    compile 'com.henorek:crashczyk:1.0.0'
 }
 ```
 
@@ -25,8 +25,8 @@ On your application class, use this snippet:
     public void onCreate() {
         super.onCreate();
 
-        //Install CustomActivityOnCrash
-        CustomActivityOnCrash.install(this);
+        //Install Crashczyk
+        Crashczyk.install(this);
 
         //Now initialize your error handlers as normal
         //i.e., ACRA.init(this);
@@ -52,7 +52,7 @@ The error activity should show up, instead of the system dialog.
 You can call the following methods at any time to customize how the library works, although usually you will call them before calling `install(context)`:
 
 ```java
-CustomActivityOnCrash.setLaunchErrorActivityWhenInBackground(boolean);
+Crashczyk.setLaunchErrorActivityWhenInBackground(boolean);
 ```
 This method defines if the error activity should be launched when the app crashes while on background.
 By default, this is true. On API<14, it's always true since there is no way to detect if the app is in foreground.
@@ -60,21 +60,21 @@ If you set it to `false`, a crash while in background won't launch the error act
 The default is `true`.
 
 ```java
-CustomActivityOnCrash.setShowErrorDetails(boolean);
+Crashczyk.setShowErrorDetails(boolean);
 ```
 This method defines if the error activity must show a button with error details.
 If you set it to `false`, the button on the default error activity will disappear, thus disabling the user from seeing the stack trace.
 The default is `true`.
 
 ```java
-CustomActivityOnCrash.setDefaultErrorActivityDrawable(int);
+Crashczyk.setDefaultErrorActivityDrawable(int);
 ```
 This method allows changing the default upside-down bug image with an image of your choice.
 You may pass a resource id for a drawable or a mipmap.
-The default is `R.drawable.customactivityoncrash_error_image`.
+The default is `R.drawable.crashczyk_error_image`.
 
 ```java
-CustomActivityOnCrash.setEnableAppRestart(boolean);
+Crashczyk.setEnableAppRestart(boolean);
 ```
 This method defines if the error activity must show a "Restart app" button or a "Close app" button.
 If you set it to `false`, the button on the default error activity will close the app instead of restarting.
@@ -83,7 +83,7 @@ if no restart activity is specified or found!
 The default is `true`.
 
 ```java
-CustomActivityOnCrash.setRestartActivityClass(Class<? extends Activity>);
+Crashczyk.setRestartActivityClass(Class<? extends Activity>);
 ```
 This method sets the activity that must be launched by the error activity when the user presses the button to restart the app.
 If you don't set it (or set it to null), the library will use the first activity on your manifest that has an intent-filter with action
@@ -95,23 +95,23 @@ As noted, you can also use the following intent-filter to specify the restart ac
 ```xml
 <intent-filter>
     <!-- ... -->
-    <action android:name="cat.ereza.customactivityoncrash.RESTART" />
+    <action android:name="com.henorek.crashczyk.RESTART" />
 </intent-filter>
 ```
 
 ```java
-CustomActivityOnCrash.setErrorActivityClass(Class<? extends Activity>);
+Crashczyk.setErrorActivityClass(Class<? extends Activity>);
 ```
 This method allows you to set a custom error activity to be launched, instead of the default one.
 Use it if you need further customization that is not just strings, colors or themes (see below).
 If you don't set it (or set it to null), the library will use first activity on your manifest that has an intent-filter with action
-`cat.ereza.customactivityoncrash.ERROR`, and if there is none, a default error activity from the library.
+`com.henorek.crashczyk.ERROR`, and if there is none, a default error activity from the library.
 If you use this, the activity **must** be declared in your `AndroidManifest.xml`, with `process` set to `:error_activity`.
 
 Example:
 ```xml
 <activity
-    android:name="cat.ereza.sample.customactivityoncrash.activity.CustomErrorActivity"
+    android:name="com.henorek.sample.crashczyk.activity.CustomErrorActivity"
     android:label="@string/error_title"
     android:process=":error_activity" />
 ```
@@ -120,7 +120,7 @@ As noted, you can also use the following intent-filter to specify the error acti
 ```xml
 <intent-filter>
     <!-- ... -->
-    <action android:name="cat.ereza.customactivityoncrash.ERROR" />
+    <action android:name="com.henorek.crashczyk.ERROR" />
 </intent-filter>
 ```
 
@@ -130,27 +130,27 @@ You can override several resources to customize the default activity:
 
 *Theme:*
 
-You can override the default error activity theme by defining a theme in your app with the following id: `CustomActivityOnCrashTheme`
+You can override the default error activity theme by defining a theme in your app with the following id: `CrashczykTheme`
 
 *Image:*
 
-By default, an image of a bug is displayed. You can change it to any image by creating a `customactivityoncrash_error_image` drawable on all density buckets (mdpi, hdpi, xhdpi, xxhdpi and xxxhdpi).
-You can also use the provided `CustomActivityOnCrash.setDefaultErrorActivityDrawable(int)` method.
+By default, an image of a bug is displayed. You can change it to any image by creating a `crashczyk_error_image` drawable on all density buckets (mdpi, hdpi, xhdpi, xxhdpi and xxxhdpi).
+You can also use the provided `Crashczyk.setDefaultErrorActivityDrawable(int)` method.
 
 *Strings:*
 
 You can provide new strings and translations for the default error activity strings by overriding the following strings:
 ```xml
-    <string name="customactivityoncrash_error_activity_error_occurred_explanation">An unexpected error occurred.\nSorry for the inconvenience.</string>
-    <string name="customactivityoncrash_error_activity_unknown_exception">Unknown exception</string>
-    <string name="customactivityoncrash_error_activity_restart_app">Restart app</string>
-    <string name="customactivityoncrash_error_activity_close_app">Close app</string>
-    <string name="customactivityoncrash_error_activity_error_details">Error details</string>
-    <string name="customactivityoncrash_error_activity_error_details_title">Error details</string>
-    <string name="customactivityoncrash_error_activity_error_details_close">Close</string>
-    <string name="customactivityoncrash_error_activity_error_details_copy">Copy to clipboard</string>
-    <string name="customactivityoncrash_error_activity_error_details_copied">Copied to clipboard</string>
-    <string name="customactivityoncrash_error_activity_error_details_clipboard_label">Error information</string>
+    <string name="crashczyk_error_activity_error_occurred_explanation">An unexpected error occurred.\nSorry for the inconvenience.</string>
+    <string name="crashczyk_error_activity_unknown_exception">Unknown exception</string>
+    <string name="crashczyk_error_activity_restart_app">Restart app</string>
+    <string name="crashczyk_error_activity_close_app">Close app</string>
+    <string name="crashczyk_error_activity_error_details">Error details</string>
+    <string name="crashczyk_error_activity_error_details_title">Error details</string>
+    <string name="crashczyk_error_activity_error_details_close">Close</string>
+    <string name="crashczyk_error_activity_error_details_copy">Copy to clipboard</string>
+    <string name="crashczyk_error_activity_error_details_copied">Copied to clipboard</string>
+    <string name="crashczyk_error_activity_error_details_clipboard_label">Error information</string>
 ```
 
 *There is a `sample` project module with examples of these overrides. If in doubt, check the code in that module.*
@@ -160,28 +160,28 @@ You can provide new strings and translations for the default error activity stri
 If you choose to create your own completely custom error activity, you can use these methods:
 
 ```java
-CustomActivityOnCrash.getStackTraceFromIntent(getIntent());
+Crashczyk.getStackTraceFromIntent(getIntent());
 ```
 Returns the stack trace that caused the error as a string.
 
 ```java
-CustomActivityOnCrash.getAllErrorDetailsFromIntent(getIntent());
+Crashczyk.getAllErrorDetailsFromIntent(getIntent());
 ```
 Returns several error details including the stack trace that caused the error, as a string. This is used in the default error activity error details dialog.
 
 ```java
-CustomActivityOnCrash.getRestartActivityClassFromIntent(getIntent());
+Crashczyk.getRestartActivityClassFromIntent(getIntent());
 ```
 Returns the class of the activity you have to launch to restart the app, or `null` if not set.
 
 ```java
-CustomActivityOnCrash.restartApplicationWithIntent(activity, intent);
+Crashczyk.restartApplicationWithIntent(activity, intent);
 ```
 Kills the current process and restarts the app again with an `startActivity()` to the passed intent.
 You **MUST** call this to restart the app, or you will end up having several `Application` class instances and experience multiprocess issues in API<17.
 
 ```java
-CustomActivityOnCrash.closeApplication(activity);
+Crashczyk.closeApplication(activity);
 ```
 Closes the app and kills the current process.
 You **MUST** call this to close the app, or you will end up having several Application class instances and experience multiprocess issues in API<17.
@@ -205,10 +205,10 @@ The inner workings are based on [ACRA](https://github.com/ACRA/acra)'s dialog re
 
 ## Incompatibilities
 
-* CustomActivityOnCrash will not work in these cases:
+* Crashczyk will not work in these cases:
     * With any custom `UncaughtExceptionHandler` set after initializing the library, that does not call back to the original handler.
     * With ACRA enabled and reporting mode set to `TOAST` or `DIALOG`.
-* If you use a custom `UncaughtExceptionHandler`, it will not be called if you initialize it before the library initialization (so, Crashlytics or ACRA initialization must be done **after** CustomActivityOnCrash initialization).
+* If you use a custom `UncaughtExceptionHandler`, it will not be called if you initialize it before the library initialization (so, Crashlytics or ACRA initialization must be done **after** Crashczyk initialization).
 * On some rare cases on devices with API<14, the app may enter a restart loop when a crash occurs. Therefore, using it on API<14 is not recommended.
 * If your app initialization or error activity crash, there is a possibility of entering an infinite restart loop (this is checked by the library for the most common cases, but could happen in rarer cases).
 * The library has not been tested with multidex enabled. It uses Class.forName() to load classes, so maybe that could cause some problem. If you test it with multidex enabled, please provide feedback!
