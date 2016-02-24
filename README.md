@@ -4,6 +4,11 @@ This library launch a custom activity with Krzysztof Krawczyk (Polish singer) qu
 
 ![](https://raw.githubusercontent.com/henorek/crashczyk/master/images/frontpage.png)
 
+## Plans for the future
+
+* Handle different exceptions with different sets of quotes
+* Rewrite whole code to Kotlin
+
 ## How to use
 
 ### 1. Add a dependency
