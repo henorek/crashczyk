@@ -19,13 +19,13 @@ apply plugin: 'com.android.library'
 android {
     compileSdkVersion 23
     buildToolsVersion "23.0.1"
-    resourcePrefix 'customactivityoncrash_'
+    resourcePrefix 'crashczyk_'
 
     defaultConfig {
         minSdkVersion 4
         targetSdkVersion 23
-        versionCode 7
-        versionName "1.4.1-SNAPSHOT"
+        versionCode 1
+        versionName "1.0.0"
     }
 }
 

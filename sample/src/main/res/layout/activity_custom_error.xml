@@ -40,7 +40,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:contentDescription="@null"
-                android:src="@drawable/customactivityoncrash_error_image" />
+                android:src="@drawable/crashczyk_error_image" />
 
             <TextView
                 android:layout_width="wrap_content"

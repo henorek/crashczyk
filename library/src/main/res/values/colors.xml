@@ -15,7 +15,7 @@
   -->
 
 <resources>
-    <color name="customactivityoncrash_primary">#3F51B5</color>
-    <color name="customactivityoncrash_primary_dark">#283593</color>
-    <color name="customactivityoncrash_accent">#FF4081</color>
+    <color name="crashczyk_primary">#3F51B5</color>
+    <color name="crashczyk_primary_dark">#283593</color>
+    <color name="crashczyk_accent">#FF4081</color>
 </resources>

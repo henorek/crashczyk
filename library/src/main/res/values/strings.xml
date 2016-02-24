@@ -15,14 +15,14 @@
   -->
 
 <resources>
-    <string name="customactivityoncrash_error_activity_error_occurred_explanation">An unexpected error occurred.\nSorry for the inconvenience.</string>
-    <string name="customactivityoncrash_error_activity_unknown_exception">Unknown exception</string>
-    <string name="customactivityoncrash_error_activity_restart_app">Restart app</string>
-    <string name="customactivityoncrash_error_activity_close_app">Close app</string>
-    <string name="customactivityoncrash_error_activity_error_details">Error details</string>
-    <string name="customactivityoncrash_error_activity_error_details_title">Error details</string>
-    <string name="customactivityoncrash_error_activity_error_details_close">Close</string>
-    <string name="customactivityoncrash_error_activity_error_details_copy">Copy to clipboard</string>
-    <string name="customactivityoncrash_error_activity_error_details_copied">Copied to clipboard</string>
-    <string name="customactivityoncrash_error_activity_error_details_clipboard_label">Error information</string>
+    <string name="crashczyk_error_activity_error_occurred_explanation">Coś poszło nie tak, mój przyjacielu.</string>
+    <string name="crashczyk_error_activity_unknown_exception">Mój przyjacielu, jak wyrazić to, co czuję...</string>
+    <string name="crashczyk_error_activity_restart_app">Zatańczmy zatem jeszcze raz.</string>
+    <string name="crashczyk_error_activity_close_app">Ma aplikacjo, byłaś mi na prawdę bliska.</string>
+    <string name="crashczyk_error_activity_error_details">Czym jest dla mnie przyjaźń Twa.</string>
+    <string name="crashczyk_error_activity_error_details_title">Czym jest dla mnie przyjaźń Twa.</string>
+    <string name="crashczyk_error_activity_error_details_close">Możesz spać spokojnie, przyjaźń swoje prawa zna.</string>
+    <string name="crashczyk_error_activity_error_details_copy">Skopiujmy to nim skończy się ten bal.</string>
+    <string name="crashczyk_error_activity_error_details_copied">Skopiujmy to nim skończy się ten bal.</string>
+    <string name="crashczyk_error_activity_error_details_clipboard_label">Czym jest dla mnie przyjaźń Twa.</string>
 </resources>

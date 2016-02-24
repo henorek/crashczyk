@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package cat.ereza.sample.customactivityoncrash.activity;
+package com.henorek.sample.krawczykoncrash.activity;
 
 import android.app.Activity;
 import android.os.AsyncTask;
@@ -22,7 +22,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import cat.ereza.sample.customactivityoncrash.R;
+import com.henorek.sample.krawczykoncrash.R;
+
 
 public class MainActivity extends Activity {
 

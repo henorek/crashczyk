@@ -30,39 +30,39 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:orientation="vertical"
-            android:paddingBottom="@dimen/customactivityoncrash_activity_vertical_margin"
-            android:paddingLeft="@dimen/customactivityoncrash_activity_horizontal_margin"
-            android:paddingRight="@dimen/customactivityoncrash_activity_horizontal_margin"
-            android:paddingTop="@dimen/customactivityoncrash_activity_vertical_margin">
+            android:paddingBottom="@dimen/crashczyk_activity_vertical_margin"
+            android:paddingLeft="@dimen/crashczyk_activity_horizontal_margin"
+            android:paddingRight="@dimen/crashczyk_activity_horizontal_margin"
+            android:paddingTop="@dimen/crashczyk_activity_vertical_margin">
 
             <ImageView
-                android:id="@+id/customactivityoncrash_error_activity_image"
+                android:id="@+id/crashczyk_error_activity_image"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:contentDescription="@null"
-                android:src="@drawable/customactivityoncrash_error_image" />
+                android:src="@drawable/crashczyk_error_image" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
                 android:gravity="center"
-                android:text="@string/customactivityoncrash_error_activity_error_occurred_explanation"
+                android:text="@string/crashczyk_error_activity_error_occurred_explanation"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
             <Button
-                android:id="@+id/customactivityoncrash_error_activity_restart_button"
+                android:id="@+id/crashczyk_error_activity_restart_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
-                android:text="@string/customactivityoncrash_error_activity_close_app" />
+                android:text="@string/crashczyk_error_activity_close_app" />
 
             <Button
-                android:id="@+id/customactivityoncrash_error_activity_more_info_button"
+                android:id="@+id/crashczyk_error_activity_more_info_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/customactivityoncrash_error_activity_error_details" />
+                android:text="@string/crashczyk_error_activity_error_details" />
         </LinearLayout>
     </ScrollView>
 </RelativeLayout>

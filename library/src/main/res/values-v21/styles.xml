@@ -16,10 +16,10 @@
 
 <resources xmlns:tools="http://schemas.android.com/tools">
 
-    <style name="CustomActivityOnCrashTheme" parent="android:Theme.Material.Light.DarkActionBar" tools:ignore="ResourceName">
-        <item name="android:colorPrimary">@color/customactivityoncrash_primary</item>
-        <item name="android:colorPrimaryDark">@color/customactivityoncrash_primary_dark</item>
-        <item name="android:colorAccent">@color/customactivityoncrash_accent</item>
+    <style name="CrashczykTheme" parent="android:Theme.Material.Light.DarkActionBar" tools:ignore="ResourceName">
+        <item name="android:colorPrimary">@color/crashczyk_primary</item>
+        <item name="android:colorPrimaryDark">@color/crashczyk_primary_dark</item>
+        <item name="android:colorAccent">@color/crashczyk_accent</item>
     </style>
 
 </resources>
